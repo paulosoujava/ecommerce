@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+<title>Parallax Template - Materialize</title>
+
+<!-- CSS  -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link href="resources/css/materialize.css" type="text/css"
+	rel="stylesheet" media="screen,projection" />
+<link href="resources/css/style.css" type="text/css" rel="stylesheet"
+	media="screen,projection" />
+
+</head>
+<body>
+
+	<!-- Dropdown Structure -->
+	<!-- <ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">Cadastro</a></li>
+  <li><a href="#!">Login</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">Contato</a></li>
+</ul> -->
+	<nav class="white" role="navigation">
+		<div class="nav-wrapper container">
+			<a id="logo-container" href="#" class="brand-logo">NERDÃO <small>&lt;
+					sua loja nerd on-line /&gt;</small></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="carrinho.html"><span class="new badge blue"
+						data-badge-caption="Carrinho ">3</span></a></li>
+				<li><a href="login.html">Login</a></li>
+				<li><a href="cadastro.html">Cadastro</a></li>
+				<li><a href="contato.html">Contato</a></li>
+				<!-- Dropdown Trigger -->
+				<!--  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+    -->
+			</ul>
+
+			<ul id="nav-mobile" class="side-nav">
+				<li><a href="#"><span class="new badge blue"
+						data-badge-caption="Carrinho ">3</span></a></li>
+				<li><a href="">Login</a></li>
+				<li><a href="">Cadastro</a></li>
+				<li><a href="">Contato</a></li>
+			</ul>
+			<!--  <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> -->
+		</div>
+	</nav>
+
+	<style type="text/css">
+	.parallax-container {height: 500px;}
+  </style>
+	<div id="index-banner" class="parallax-container">
+		<div class="parallax">
+			<img src="resources/imagem_site/nred1.png"
+				alt="Unsplashed background img 1" />
+		</div>
+	</div>
+
+
+
+
+	<!--   Icon Section   -->
+	<div class="row ">
+		<div class="col s12 m4">
+
+			<div class="card-panel ">
+				<p class="flow-text blue-text">Olha isso</p>
+				<div class="row">
+
+					<div class="col s12 m10 " style="margin-left: 30px">
+					
+					<a href="#{ctrlLoj.listProduto}"
+									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue"><i class="material-icons">shopping_cart</i> </a> 
+						<div class="card  hoverable">
+							<div class="card-image">
+								<img
+									src="resources/imagem_site/ca1.png" />
+								<a href="item.html"
+									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">R$
+									39.99</a> <a href="item.html"
+									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">Ver
+									mais...</a>
+							</div>
+
+
+						</div>
+
+					</div>
+
+					<div class="col s12 m5" style="margin-left: 30px">
+						<div class="card ">
+							<div class="card-image hoverable">
+								<img
+									src="resources/imagem_site/ace2.jpg"/>
+								<a href="item.html"
+									class="col s12 m12 btn left btn-block  halfway-fab waves-effect waves-light blue">R$
+									9.99.</a> <a href="item.html"
+									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">Ver
+									mais...</a>
+
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m5" style="margin-left: 30px">
+						<div class="card  hoverable">
+							<div class="card-image">
+								<img
+									src="resources/imagem_site/ac3.jpg" />
+								<a href="item.html"
+									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">R$
+									99.99.</a> <a href="item.html"
+									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">Ver
+									mais...</a>
+
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col s12 m8">
+			<div class="icon-block">
+
+				<div class="row">
+					<div class="slider" style="margin-top: 45px">
+						<ul class="slides">
+							<li><img src="resources/imagem_site/prom1.jpg" /> <!-- random image -->
+								<div class="caption center-align">
+									<h3 style="margin-left: 28px">Curtiu?  <button class=" center center-align center-block btn btn-block blue">Quero</button></h3>
+									
+									
+								</div></li>
+							<li><img src="resources/imagem_site/pro2.jpg" /> <!-- random image -->
+								<div class="caption left-align">
+									<h3>ShingLing Computer</h3>
+									<h5 class="light grey-text text-lighten-3"><button class=" center center-align center-block btn btn-block blue">Quero</button></h5>
+								</div></li>
+							<li><img src="resources/imagem_site/pro3.jpg" /> <!-- random image -->
+								<div class="caption right-align">
+									<h3>Se liga no teclado</h3>
+									<h5 class="light grey-text text-lighten-3"><button class=" center center-align center-block btn btn-block red">Quero</button></h5>
+								</div></li>
+							<li><img src="resources/imagem_site/pro4.jpg" /> <!-- random image -->
+								<div class="caption center-align">
+									<h3 class="black-text">E este chingLing</h3>
+									<h5 class="light grey-text text-lighten-3" ><button class=" center center-align center-block btn btn-block blue">Quero</button>
+									</h5>
+								</div></li>
+						</ul>
+						<br />
+						<br />
+						<div class="col s12 m3 ">
+							<div class="card  hoverable">
+							<a href="#{ctrlLoj.listProduto}"
+									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
+								<div class="card-image">
+									<img
+										src="resources/imagem_site/ca4.png" /><a
+										href="item.html"
+										class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
+										49.99.</a> <a href="item.html"
+										class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">Ver
+										mais...</a>
+
+								</div>
+							</div>
+						</div>
+						<div class="col s12 m3 ">
+							<div class="card  hoverable">
+							<a href="#{ctrlLoj.listProduto}"
+									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red"><i class="material-icons">shopping_cart</i> </a>
+								<div class="card-image">
+									<img
+										src="resources/imagem_site/ca3.png" />
+									<a href="item.html"
+										class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">R$
+										59.99.</a> <a href="item.html"
+										class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">Ver
+										mais...</a>
+
+								</div>
+
+							</div>
+						</div>
+						<div class="col s12 m3 ">
+							<div class="card ">
+								<div class="card-image hoverable">
+								<a href="#{ctrlLoj.listProduto}"
+									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue"><i class="material-icons">shopping_cart</i> </a>
+									<img
+										src="resources/imagem_site/ca5.png" />
+									<a href="item.html"
+										class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">R$
+										49.99.</a> <a href="item.html"
+										class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">Ver
+										mais...</a>
+
+								</div>
+							</div>
+						</div>
+						<div class="col s12 m3 ">
+							<div class="card ">
+								<div class="card-image hoverable">
+								<a href="#{ctrlLoj.listProduto}"
+									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black"><i class="material-icons">shopping_cart</i> </a>
+									<img
+										src="resources/imagem_site/ca7.png" />
+									<a href="item.html"
+										class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">R$
+										59.99.</a> <a href="item.html"
+										class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">Ver
+										mais...</a>
+
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="card teal z-depth-1" style="padding: 10px">
+		<div class="row">
+			<h2 class="center-align white-text	">Muito mais...</h2>
+		</div>
+	</div>
+
+	<div class="container" style="margin-top: -25px">
+		<div class="section">
+
+			<!--   Icon Section   -->
+			<div class="row">
+				<div class="col s12 m6">
+					<div class="icon-block">
+
+						<div class="row">
+							<div class="col s12">
+								<ul class="tabs">
+									<li class="tab col s3"><a class="active" href="#test1">Jogo</a></li>
+									<li class="tab col s3"><a href="#test2">Adesivo</a></li>
+									<li class="tab col s3 "><a href="#test3">Curso</a></li>
+								</ul>
+							</div>
+							<div id="test1" class="col s12">
+								<div class="row">
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+												<img src="resources/imagem_site/jo2.jpg" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
+													99.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+												<img src="resources/imagem_site/jo3.jpg" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">R$
+													99.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+												<img  src="resources/imagem_site/jog1.jpg" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">R$
+													99.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+									
+								</div>
+
+
+
+							</div>
+							<div id="test2" class="col s12">
+
+
+								<div class="row">
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+												<img src="resources/imagem_site/se4.png" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
+													999.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+ 												<img src="resources/imagem_site/se3.png" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">R$
+													999.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+ 												<img src="resources/imagem_site/se1.png" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">R$
+													999.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+ 												<img src="resources/imagem_site/se2.png" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">R$
+													999.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+							<div id="test3" class="col s12">
+								<div class="row">
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+												<img src="resources/imagem_site/cur11.png" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">R$
+													99.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+
+												<img src="resources/imagem_site/cur12.png" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
+													999.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+									
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+
+												<img src="resources/imagem_site/cur2.jpg" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">R$
+													999.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+									
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+
+												<img src="resources/imagem_site/cur3.jpg" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">R$
+													999.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+									
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+
+												<img src="resources/imagem_site/cur3.jpg" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">R$
+													999.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+									
+									<div class="col s12 m4">
+										<div class="card hoverable">
+										<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
+											<div class="card-image">
+
+												<img src="resources/imagem_site/cur5.jpg" />
+												<a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
+													999.99.</a> <a href="item.html"
+													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">Ver
+													mais...</a>
+
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col s12 m6 ">
+					<blockquote>
+						<div class="icon-block">
+							<h2 class="flow-text">Confira o Vídeo</h2>
+							<div class="row" style="margin-top: 58px">
+								<div class="col s12 m12">
+									<div class="video-container">
+										<iframe width="853" height="480"
+											src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
+											frameborder="0" ></iframe>
+										<br />
+										<p>Somente o</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</blockquote>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="parallax-container valign-wrapper">
+		<div class="parallax">
+			<img src="resources/imagem_site/nerd3.png"
+				alt="Unsplashed background img 3" />
+		</div>
+	</div>
+	<div class="card teal">
+		<div class="row" style="padding: 10px; margin-top: -20px">
+			<p class="flow-text center-align white-text">Mais nerdices</p>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/mu1.png" />
+					<span class="card-title black-text">Red Hot 	Chilipeppers</span> 
+				</div>
+				<div class="card-content">
+					<p>Cd 2015 em excelente estado pra quem curte ouvir um som progaramando pela noite toda...</p>
+				</div>
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">
+					Ver mais</a>
+			</div>
+		</div>
+	<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/mu2.png" />
+					<span class="card-title black-text">Spotfy</span> 
+				</div>
+				<div class="card-content">
+					<p>Um ano de acesso para você ouvir todos os tipos de estilos em suas caminhadas matinais.....</p>
+				</div>
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">
+					Ver mais</a>
+			</div>
+		</div>
+		
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/mu3.png" />
+					<span class="card-title black-text">AC/DC</span> 
+				</div>
+				<div class="card-content">
+					<p>Cd 2005 em excelente estado pra quem curte ouvir um som progaramando pela noite toda...</p>
+				</div>
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">
+					Ver mais</a>
+			</div>
+		</div>
+		
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/mu4.png" />
+					<span class="card-title black-text">The Beatles</span> 
+				</div>
+				<div class="card-content">
+					<p>Cd 2011 em excelente estado pra quem curte ouvir um som progaramando pela noite toda...</p>
+				</div>
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">
+					Ver mais</a>
+			</div>
+		</div>
+		
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light teal"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/mu5.png" />
+					<span class="card-title black-text">Metalica</span> 
+				</div>
+				<div class="card-content">
+					<p>Cd  em excelente estado pra quem curte ouvir um som progaramando pela noite toda...</p>
+				</div>
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light teal">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light teal">
+					Ver mais</a>
+			</div>
+		</div>
+		
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/mu6.png" />
+					<span class="card-title black-text">Kiss</span> 
+				</div>
+				<div class="card-content">
+					<p>O melhor e  em excelente estado cd do Kiss, pra quem curte ouvir um som progaramando pela noite toda...</p>
+				</div>
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">
+					Ver mais</a>
+			</div>
+		</div>
+		
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/g2.png" />
+					<span class="card-title black-text">Adesivo Fenis</span> 
+				</div>
+				<div class="card-content">
+					<p>Bora color uns adesivos ai neste pc, sai da mesmice seja o cara.</p>
+				</div>
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">
+					Ver mais</a>
+			</div>
+		</div>
+			<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/g3.png" />
+					<span class="card-title black-text">Adesivo Fenis 2</span> 
+				</div>
+				<div class="card-content">
+					<p>Bora color uns adesivos ai neste pc, sai da mesmice seja o cara.</p>
+				</div>
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">
+					Ver mais</a>
+			</div>
+		</div>
+		
+	</div>
+<hr />
+		<h2>Diversos</h2>
+	<div class="row">
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/g3.png" />
+				</div>
+			
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">
+					Ver mais</a>
+			</div>
+		</div>
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/g4.png" />
+				</div>
+			
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red">
+					Ver mais</a>
+			</div>
+		</div>
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light teal"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/g5.png" />
+				</div>
+			
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light teal">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light teal">
+					Ver mais</a>
+			</div>
+		</div>
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light purple"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/g6.png" />
+				</div>
+			
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light purple">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light purple">
+					Ver mais</a>
+			</div>
+		</div>
+		<div class="col s12 m3">
+			<div class="card ">
+			<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue"><i class="material-icons">shopping_cart</i> </a>
+				<div class="card-image ">
+					<img
+						src="resources/imagem_site/g7.png" />
+				</div>
+			
+					<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">
+					R$ 9.99</a>
+						<a href="#{ctrlLoj.listProduto}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">
+					Ver mais</a>
+			</div>
+		</div>
+		<div class="col s12 m9">
+			<div class="card " >
+			<iframe  width="100%" height="445" src="https://www.youtube.com/embed/jWWCBBNH-9I" frameborder="0" ></iframe>
+			</div>
+		</div>
+		</div>		
+
+	<footer class="page-footer teal">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Sobre nós</h5>
+					<p class="grey-text text-lighten-4">Somos um grupo de nerd em
+						busca de disponibilizar o melhor conteúdo nerd on-line seja novo
+						ou usado, aqui você, compra, vende ou troca...</p>
+
+
+				</div>
+				<div class="col l6 s12">
+					<h5 class="white-text">NewsLetter</h5>
+					<ul>
+						<li>
+							<form class="col s12">
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="first_name" type="text" class="validate" /><label
+											for="first_name" class="white-text">Digite seu melhor
+											email</label><br />
+										<button class="btn  btn-block right">Enviar</button>
+									</div>
+								</div>
+								</form>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				Made by <a class="brown-text text-lighten-3"
+					href="http://materializecss.com">Materialize</a>
+			</div>
+		</div>
+	</footer>
+
+
+	<!--  Scripts-->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="resources/js/materialize.js"></script>
+	<script src="resources/js/init.js"></script>
+
+</body>
+</html>
