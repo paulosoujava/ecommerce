@@ -4,16 +4,23 @@ import java.util.Date;
 
 public class Pessoa {
 
+	private Integer id;
 	private String nome;
 	private String sobreNome;
 	private String email;
 	private String senha;
-	private Date dataNasc;
+	private Endereco endereco;
 	private String fone;
 	private String cpf;
 	
 	
 	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -38,11 +45,12 @@ public class Pessoa {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public Date getDataNasc() {
-		return dataNasc;
+	
+	public Endereco getEndereco() {
+		return endereco;
 	}
-	public void setDataNasc(Date dataNasc) {
-		this.dataNasc = dataNasc;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 	public String getFone() {
 		return fone;
@@ -59,7 +67,7 @@ public class Pessoa {
 	@Override
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", sobreNome=" + sobreNome + ", email=" + email + ", senha=" + senha
-				+ ", dataNasc=" + dataNasc + ", fone=" + fone + ", cpf=" + cpf + "]";
+				 + ", fone=" + fone + ", cpf=" + cpf + "]";
 	}
 
 

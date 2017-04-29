@@ -1,0 +1,68 @@
+<html  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="resources/css/materialize.min.css" />
+  <link rel="stylesheet" type="text/css" href="resources/css/materialize.css" />
+
+</head>
+
+<h:body >
+ 
+  <div class="container">
+        <!-- Page Content goes here -->
+        <div class="row center-align center-block center">
+        <div class="col s3 m3 l3"></div>
+        <div class="col s6 m6 l6">
+       
+          <div class="card" style="margin-top: 150px;">
+           <img src="resources/imagem_site/ac3.jpg " width="90" height="90" class="right" />
+          <div class="card-title  black-text left" style="margin-left: 5px"> Nerdão</div>
+      	   
+          <h:form style="padding:20px">
+            <div class="small red-text" style="margin-left: -60px; margin-top: 30px ">
+             #{ctrlLogin.msg}
+             </div>
+             
+              <div class="row"  style="margin-left: 60px">
+		        <div class="input-field col s10 m10">
+		          <h:inputText id="email" class="validate" value="#{ctrlLogin.p.email}"  required="true" requiredMessage="Por favor digite a senha"/>
+		          <label for="email">Email</label>
+		          <div class="small" style="margin-left: -145px; margin-top: -10px "><h:message for="email"  style="color: red;"  /></div>
+		        </div>
+		      </div>	
+                <div class="row" style="margin-left: 60px; ">
+                <div class="input-field col s10 m10 ">
+		          <h:inputSecret   value="#{ctrlLogin.p.senha}" id="password"  required="true"  requiredMessage="Por favor digite seu email"/>
+		          <label for="password">Senha</label>
+		          <div class="small" style="margin-left: -130px; margin-top: -10px "> <h:message for="password" style="color: red; margin-left: -10px"/></div> 
+		        </div>
+		       
+              </div>
+
+		       <div class="row"  >
+		        <div class="input-field col s10 m10">
+		          <h:commandButton value="Logar" action="#{ctrlLogin.logar()}"  class="btn btn-large right"  />	
+		        </div>
+		      </div>	
+              
+          </h:form>
+        </div>
+        </div>
+      
+        
+        <div class="col s3 m3 l3"></div>
+        </div>
+      </div>
+      
+      
+      
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="resources/js/materialize.min.js"></script>
+  <script type="text/javascript" src="resources/js/init.js"></script>	
+</h:body>
+
+</html>

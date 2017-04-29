@@ -4,6 +4,8 @@ public class Cidade {
 
 	private Estado estado;
 	private String cidade;
+	
+	
 	public Estado getEstado() {
 		return estado;
 	}

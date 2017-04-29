@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+		<meta charset="UTF-8"/>
+	<title>Cadastro de Pessoas</title>
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet" />
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet"
+		href="../resources/css/materialize.css" media="screen,projection" />
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Egresso</title>
+	</h:head>
+	<h:body>
+	
+
+
+  <!-- Navbar goes here -->
+
+    <!-- Page Layout here -->
+    <div class="row" >
+      <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="#!" class="breadcrumb">Seja bem vindo, #{ctrlLogin.p.nome} #{ctrlLogin.p.sobreNome}</a>
+      </div>
+    </div>
+  </nav>
+      <div class="col s12 m4 l3" > <!-- Note that "m4 l3" was added -->
+     <ui:include src="tpl/menu.html" />  
+	  <h:panelGroup rendered="#{ctrlLoj.vendaHoje.size() > 0 }">
+	    <h4>Compras Hoje</h4>
+		    <h:dataTable id="idTabela" value="#{ctrlLoj.vendaHoje}" var="h">
+		      <h:column >
+		       <h:outputText class="card teal  hoverable col s12 m12 l12" style="padding:10px; margin-bottom:-30px"  value="${h.pessoa.nome} ${h.pessoa.sobreNome}"  />
+		      </h:column>
+		
+		 </h:dataTable>
+	  </h:panelGroup>
+
+  
+
+    
+   </div>
+
+      <div class="col s12 m8 l9" > <!-- Note that "m8 l9" was added -->
+      
+
+      <!--   Icon Section   -->
+      <div class="row ">
+        <div class="col s12 m12" >
+          <h2>Editar</h2>
+            <div class="card-panel ">
+            <div class="row">
+               <div class="small red-text" style="margin-left: -10px; margin-top: 30px ; font-size: large;">
+             
+             #{ctrlCadProd.msg}
+             </div>
+            <h:form class="col s12">
+			      <div class="row">
+			        <div class="input-field col s6">
+			          <h:inputText  value="#{ctrlLisProm.produto.nome}" id="nome"  />
+			          <label for="nome">Nome</label>
+			        </div>
+            
+			        <div class="input-field col s3">
+			          <h:inputText   value="#{ctrlLisProm.produto.estoque}" id="estoque"   />
+			          <label for="estoque">Quantidade no Estoque</label>
+			        </div>
+			         <div class="input-field col s3">
+			          <h:inputText   value="#{ctrlLisProm.produto.valor}" id="valor"  />
+			          <label for="valor">Valor</label>
+			        </div>
+            	</div>
+           
+            	<div class="row">
+			        <div class="input-field col s12">
+			          <h:inputText value="#{ctrlLisProm.produto.img1}" id="foto1"  />
+			          <label for="foto1">Url Foto 1</label>
+			        </div>
+                  <div class="input-field col s12">
+			          <h:inputText value="#{ctrlLisProm.produto.img2}" id="foto2"  />
+			          <label for="foto2">Url Foto 2</label>
+			        </div>
+			       <div class="input-field col s12">
+			          <h:inputText  value="#{ctrlLisProm.produto.img3}" id="foto3" />
+			          <label for="foto3">Url Foto 3</label>
+			        </div>
+			       
+            	</div>
+            	
+            	<div class="row">
+			        <div class="input-field col s12">
+			          <h:inputTextarea value="#{ctrlLisProm.produto.desc}"  id="icon_prefix2" class="materialize-textarea" />
+			         <h:inputHidden value="#{ctrlLisProm.produto.idProduto}" />
+			          <label for="icon_prefix2">Descrição</label>
+			        </div>
+			      </div>
+            	
+            	<div class="row">
+			        <div class="input-field col s12">
+			          <h:commandButton action="#{ctrlLisProm.atualizar( )}"   class="btn btn-small col s5 m5 l5 green left" value="Atualizar" /> 
+			           <h:commandButton action="#{ctrlLisProm.deletar()}"  class="btn btn-small red col s5 m5 l5 right" value="Deletar" />
+			        </div>
+            	</div>
+            	</h:form>
+           </div>
+        </div>
+</div>
+ 
+</div>
+	    
+  
+
+    </div>
+</div>
+
+
+			<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../resources/js/materialize.js"></script>
+	<script type="text/javascript" src="../resources/js/init.js"></script>	
+	</h:body>
+	</html>
