@@ -23,12 +23,12 @@ public class BannerDAO {
 		this.conexao = new ConnectionFactory().obterConexao();
 	}
 	
-	public Produto getProdutoById(Integer id){
+	public Banner getProdutoById(Integer id){
 		
 
 		this.getConexao();
 		
-		String sql = "SELECT * FROM baner WHERE idbanner = ? ";
+		String sql = "SELECT * FROM banner WHERE idbanner = ? ";
 		
 
 		try {
@@ -56,7 +56,7 @@ public class BannerDAO {
 			}
 
 			stmt.close();
-			return p;
+			return b;
 
 		} catch (SQLException e) {
 			System.out.println("Erro ao obter banner: " + e.getMessage());
