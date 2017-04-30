@@ -22,35 +22,38 @@ public class ProdutoDAO {
 		this.conexao = new ConnectionFactory().obterConexao();
 	}
 	
-	public Produto getProdutoById(Integer id){
+	public List<Produto> getProdutoByTipo(Integer id){
 		
 
 		this.getConexao();
+		 List<Produto> pl = new ArrayList<>();
 		
-		String sql = "SELECT * FROM produto WHERE idproduto = ? ";
+		String sql = "SELECT * FROM produto WHERE tipo = ? ";
 		
 
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
-			stmt.setMaxRows(1);
+			
 			stmt.setInt(1, id);
 			// executa
-			ResultSet rs = stmt.executeQuery();
 			Produto p = new Produto();
 			
+			// executa
+			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				
-				p.setDesc(rs.getString(""));
-				p.setIdProduto(Integer.parseInt( rs.getString("")));
-				p.setNome(rs.getString(""));
-				p.setEstoque(Integer.parseInt( rs.getString("")));
-				p.setValor(Float.parseFloat(rs.getString("")));
-				
+				p = new Produto();
+				p.setIdProduto(rs.getInt("idproduto"));
+				p.setNome(rs.getString("nome"));
+				p.setTipo(rs.getInt("tipo"));
+				p.setDesc(rs.getString("descricao"));
+				p.setEstoque(Integer.parseInt( rs.getString("estoque")));
+				p.setValor(Float.parseFloat( rs.getString("valor")));
+				p.setImg1(rs.getString("img1"));
+				p.setImg2(rs.getString("img2"));
+				p.setImg3(rs.getString("img3"));
+				pl.add(p);
 			}
-
-			stmt.close();
-			return p;
-
+			return pl;
 		} catch (SQLException e) {
 			System.out.println("Erro ao obter compra: " + e.getMessage());
 			e.printStackTrace();
@@ -66,7 +69,7 @@ public class ProdutoDAO {
 	public int incluir(Produto p ) {
 		this.getConexao();
 		int idInserido = 0;
-		String sql = "INSERT INTO `ecommerce`.`produto` (`nome`, `descricao`, `estoque`, `valor`, `img1`, `img2`, `img3`) VALUES (?, ?, ?, ?, ?, ?,?)";
+		String sql = "INSERT INTO `ecommerce`.`produto` (`nome`, `descricao`, `estoque`, `valor`, `img1`, `img2`, `img3`, tipo) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			// seta os valores
@@ -77,6 +80,7 @@ public class ProdutoDAO {
 			stmt.setString(5, p.getImg1());
 			stmt.setString(6, p.getImg2());
 			stmt.setString(7, p.getImg3());
+			stmt.setInt(8, p.getTipo());
 			
 			// executa
 			stmt.executeUpdate();
@@ -104,7 +108,9 @@ public class ProdutoDAO {
 			ConnectionFactory.fecharConexao(this.conexao);
 		}
 	}
+	
 	public List<Produto> obterProdutos() {
+	
 		this.getConexao();
 		Produto p = null;
       List<Produto> pl = new ArrayList<>();
@@ -119,6 +125,7 @@ public class ProdutoDAO {
 				p = new Produto();
 				p.setIdProduto(rs.getInt("idproduto"));
 				p.setNome(rs.getString("nome"));
+				p.setTipo(rs.getInt("tipo"));
 				p.setDesc(rs.getString("descricao"));
 				p.setEstoque(Integer.parseInt( rs.getString("estoque")));
 				p.setValor(Float.parseFloat( rs.getString("valor")));
@@ -168,7 +175,9 @@ public class ProdutoDAO {
 	public int atualizar(Produto p ) {
 		this.getConexao();
 		int idInserido = 0;
-		String sql = "UPDATE produto SET nome=?, descricao=?, estoque=?, valor=?,  img1=?, img2=?, img3=? WHERE idproduto=? ";
+		
+		
+		String sql = "UPDATE produto SET nome=?, descricao=?, estoque=?, valor=?,  img1=?, img2=?, img3=?, tipo = ? WHERE idproduto=? ";
 
 				
 		try {
@@ -181,7 +190,8 @@ public class ProdutoDAO {
 			stmt.setString(5, p.getImg1());
 			stmt.setString(6, p.getImg2());
 			stmt.setString(7, p.getImg3());
-			stmt.setInt(8, p.getIdProduto());
+			stmt.setInt(8, p.getTipo());
+			stmt.setInt(9, p.getIdProduto());
 			
 			// executa
 			stmt.executeUpdate();

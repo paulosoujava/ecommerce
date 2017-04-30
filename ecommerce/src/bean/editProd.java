@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.component.html.HtmlSelectOneMenu;
 
 import dao.ProdutoDAO;
 import entity.Produto;
@@ -28,10 +29,11 @@ public class editProd implements Serializable{
 	
 	public String editar(Produto produto) {
 		this.produto = produto;
-		System.out.println(produto);
+			System.out.println(produto);
 		return "editProd.xhtml";
 	}
 	public String atualizar( ){
+		
 		pDAO.atualizar(this.produto);
 			return "listProd.xhtml?faces-redirect=true";
 		
@@ -52,5 +54,7 @@ public class editProd implements Serializable{
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
+
+
 
 }

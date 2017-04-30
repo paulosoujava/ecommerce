@@ -12,6 +12,7 @@ public class Produto {
 	private String img1;
 	private String img2;
 	private String img3;
+	private Integer tipo;
 	
 	
 	
@@ -66,6 +67,13 @@ public class Produto {
 	}
 	public void setImg3(String img3) {
 		this.img3 = img3;
+	}
+	
+	public Integer getTipo() {
+		return tipo;
+	}
+	public void setTipo(Integer tipo) {
+		this.tipo = tipo;
 	}
 	@Override
 	public String toString() {

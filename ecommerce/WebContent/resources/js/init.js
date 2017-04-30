@@ -5,6 +5,7 @@
     $('.parallax').parallax();
     $('.slider').slider();
     $('ul.tabs').tabs();
+    $('select').material_select();
   
     
   }); // end of document ready

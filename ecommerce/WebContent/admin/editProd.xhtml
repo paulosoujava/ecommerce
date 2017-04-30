@@ -61,9 +61,23 @@
             <div class="row">
                <div class="small red-text" style="margin-left: -10px; margin-top: 30px ; font-size: large;">
              
-             #{ctrlCadProd.msg}
+      
              </div>
             <h:form class="col s12">
+           
+             <div class="input-field col s12">
+             
+             
+			     <h:selectOneMenu value = "#{ctrlLisProd.produto.tipo}" id="select"> 
+			           
+			           <f:selectItem itemValue = "4" itemLabel = "Diverso"   itemDisabled="#{ctrlLisProd.produto.tipo == 4}" />
+						<f:selectItem itemValue = "1" itemLabel = "Adesivo " itemDisabled="#{ctrlLisProd.produto.tipo == 1}"  /> 		         
+					   <f:selectItem itemValue = "2" itemLabel = "Curso" itemDisabled="#{ctrlLisProd.produto.tipo == 2}"/> 
+					   <f:selectItem itemValue = "3" itemLabel = "Jogo" itemDisabled="#{ctrlLisProd.produto.tipo == 3}"/> 
+					</h:selectOneMenu> 	
+ 
+				    <label>Seção do Produto</label>
+				  </div>
 			      <div class="row">
 			        <div class="input-field col s6">
 			          <h:inputText  value="#{ctrlLisProd.produto.nome}" id="nome"  />

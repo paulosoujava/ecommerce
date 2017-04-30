@@ -250,6 +250,25 @@ public class Carrinho  implements Serializable{
 		   v.setUrl(url_default);
 			return v;
 	 }
+	 
+	 //lista de produtos por tipo 
+	 // 1 - adesivo 2 - curso 3 - jogo 4 - diver
+	 public List<Produto> listProdutosAdesivo(){
+		  ProdutoDAO pD = new ProdutoDAO();
+		  return pD.getProdutoByTipo(1);
+	 }
+	 public List<Produto> listProdutosCurso(){
+		  ProdutoDAO pD = new ProdutoDAO();
+		  return pD.getProdutoByTipo(2);
+	 }
+	 public List<Produto> listProdutosJogo(){
+		  ProdutoDAO pD = new ProdutoDAO();
+		  return pD.getProdutoByTipo(3);
+	 }
+	 public List<Produto> listProdutosDiverso(){
+		  ProdutoDAO pD = new ProdutoDAO();
+		  return pD.getProdutoByTipo(4);
+	 }
 //gett set
 	   
 	   

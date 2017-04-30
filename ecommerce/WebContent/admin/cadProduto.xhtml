@@ -64,6 +64,16 @@
              #{ctrlCadProd.msg}
              </div>
             <h:form class="col s12">
+                <div class="input-field col s12">
+			         <h:selectOneMenu value = "#{ctrlCadProd.produto.tipo}" id="select"> 
+			           <f:selectItem itemValue = "4" itemLabel = "Diverso" />
+						<f:selectItem itemValue = "1" itemLabel = "Adesivo "  /> 		         
+					   <f:selectItem itemValue = "2" itemLabel = "Curso" /> 
+					   <f:selectItem itemValue = "3" itemLabel = "Jogo" /> 
+					</h:selectOneMenu> 	
+ 
+				    <label>Seção do Produto</label>
+				  </div>
 			      <div class="row">
 			        <div class="input-field col s6">
 			          <h:inputText  value="#{ctrlCadProd.produto.nome}" id="nome"  />
@@ -93,7 +103,8 @@
 			          <h:inputText  value="#{ctrlCadProd.produto.img3}" id="foto3" />
 			          <label for="foto3">Url Foto 3</label>
 			        </div>
-			       
+			        
+			     
             	</div>
             	
             	<div class="row">
