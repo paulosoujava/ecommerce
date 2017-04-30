@@ -47,13 +47,17 @@
 	    <nav>
 	    <a href="#!"  style="padding-left: 10px"  class="brand-logo white-text">Nerdão <small>&lt;
 					sua loja nerd on-line /&gt;</small></a>
-      <div class="nav-wrapper right" style="padding-right: 5px">
-         <a class="btn-floating btn-large teal navbar-fixed">
+      <div  class="nav-wrapper right" style="padding-right: 5px">
+         <a href="#modal1" class="btn-floating btn-large teal navbar-fixed">
       <i class="large material-icons">shopping_cart</i>
     </a>
      
       </div>
     </nav>
+
+    
+    
+    
   </div>
 	<style type="text/css">
 	.parallax-container {height: 500px;}
@@ -93,7 +97,7 @@
 
 					<div class="col s12 m10 " style="margin-left: 30px">
 					<h:form>
-					<h:commandButton action="#{carBean.putIntheCar()}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+					<h:commandButton action="#{carBean.carrinho(carBean.promocao1)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
 					</h:form>
 						<div class="card  hoverable">
 							<div class="card-image">
@@ -109,7 +113,10 @@
 
 					</div>
 
-					<div class="col s12 m5" style="margin-left: 30px">
+					<div class="col s12 m5" style="margin-left: 30px; margin-top: 10px">
+					<h:form>
+					<h:commandButton action="#{carBean.carrinho(carBean.promocao2)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+					</h:form>
 						<div class="card ">
 							<div class="card-image hoverable">
 								<img src="#{carBean.promocao2.img1}" height="230"/>
@@ -122,7 +129,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="col s12 m5" style="margin-left: 30px">
+					<div class="col s12 m5" style="margin-left: 30px; margin-top: 10px">
+					<h:form>
+					<h:commandButton action="#{carBean.carrinho(carBean.promocao3)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+					</h:form>
 						<div class="card  hoverable">
 							<div class="card-image">
 								<img src= "#{carBean.promocao3.img1}" height="230"/>
@@ -175,10 +185,12 @@
 						<br />
 						<br />
 						<div class="col s12 m3 ">
+							<h:form>
+					<h:commandButton action="#{carBean.carrinho(carBean.promocao4)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+					</h:form>
 							<div class="card  hoverable">
-							<a href=""
-									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
-								<div class="card-image">
+						
+						<div class="card-image">
 									<img
 										src="#{carBean.promocao4.img1}" height="230"/><a
 										href="item.html"
@@ -191,10 +203,11 @@
 							</div>
 						</div>
 						<div class="col s12 m3 ">
+						<h:form>
+					<h:commandButton action="#{carBean.carrinho(carBean.promocao1)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+					</h:form>
 							<div class="card  hoverable">
-							<a href=""
-									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light red"><i class="material-icons">shopping_cart</i> </a>
-								<div class="card-image">
+							<div class="card-image">
 									<img
 										src="#{carBean.promocao5.img1}" height="230"/>
 									<a href="item.html"
@@ -209,10 +222,11 @@
 						</div>
 						<div class="col s12 m3 ">
 							<div class="card ">
+								<h:form>
+					<h:commandButton action="#{carBean.carrinho(carBean.promocao4)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+					</h:form>
 								<div class="card-image hoverable">
-								<a href=""
-									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue"><i class="material-icons">shopping_cart</i> </a>
-									<img
+							<img
 										src="#{carBean.promocao6.img1}" height="230"/>
 									<a href="item.html"
 										class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">R$
@@ -225,11 +239,11 @@
 						</div>
 						<div class="col s12 m3 ">
 							<div class="card ">
+								<h:form>
+					<h:commandButton action="#{carBean.carrinho(carBean.promocao4)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+					</h:form>
 								<div class="card-image hoverable">
-								<a href=""
-									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black"><i class="material-icons">shopping_cart</i> </a>
-									<img
-										src="#{carBean.promocao7.img1}" height="230"/>
+							<img src="#{carBean.promocao7.img1}" height="230"/>
 									<a href="item.html"
 										class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">R$
 										#{carBean.promocao7.valor}.</a> <a href="item.html"
@@ -277,9 +291,11 @@
 								<ui:repeat value="#{carBean.listProdutosJogo()}" var="j">
 								
 									<div class="col s12 m4">
+										<h:form>
+										  <h:commandButton action="#{carBean.carrinho(j)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+										</h:form>
 										<div class="card hoverable">
-										<a href="" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
-											<div class="card-image">
+										<div class="card-image">
 												<img src="#{j.img1}" />
 												<a href="item.html"
 													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
@@ -300,8 +316,10 @@
 								
 									<div class="col s12 m4">
 										<div class="card hoverable">
-										<a href="" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
-											<div class="card-image">
+										<h:form>
+										  <h:commandButton action="#{carBean.carrinho(a)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+										</h:form>
+										<div class="card-image">
 												<img src="#{a.img1}" />
 												<a href="item.html"
 													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
@@ -322,9 +340,11 @@
 								<div class="row">
 							        <ui:repeat value="#{carBean.listProdutosCurso()}" var="c">
 										<div class="col s12 m4">
+										<h:form>
+										  <h:commandButton action="#{carBean.carrinho(c)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+										</h:form>
 											<div class="card hoverable">
-											<a href="" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green"><i class="material-icons">shopping_cart</i> </a>
-												<div class="card-image">
+											<div class="card-image">
 													<img src="#{c.img1}" />
 													<a href="item.html"
 														class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
@@ -354,7 +374,7 @@
 											src="//www.youtube.com/embed/#{carBean.video1.url}"
 											frameborder="0" ></iframe>
 										<br />
-										<p>Somente o</p>
+										
 									</div>
 								</div>
 							</div>
@@ -387,11 +407,12 @@
 <ui:repeat value="#{carBean.listProdutosDiverso()}" var="d" >
       
         	<div class="col s12 m3">
+        	<h:form>
+              <h:commandButton action="#{carBean.carrinho(d)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
+		  </h:form>
 			<div class="card ">
-			<a href="" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black"><i class="material-icons">shopping_cart</i> </a>
-				<div class="card-image ">
-					<img
-						src="#{d.img1}" />
+			<div class="card-image ">
+					<img  src="#{d.img1}" />
 				</div>
 			
 					<a href="" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">
@@ -451,7 +472,50 @@
 		</div>
 	</footer>
 
-
+      <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Carrinho</h4>
+        <div class="row ">
+          <div class="col s12 m12" >
+            <div class="card-panel ">
+              <div class="row">
+           <h:dataTable   class="bordered highlight" value="#{carBean.carrinhoProduto}" var="exibe">   
+			  <h:column>
+			    <f:facet name="header">
+			     Foto
+			    </f:facet>
+			    <img  src="#{exibe.img1}" width="40" height="40"/>
+			     
+			  </h:column>
+		
+			
+			  <h:column>
+			    <f:facet name="header">
+			     Produto
+			    </f:facet>
+			     <h:outputText value="#{exibe.nome}"/>
+			  </h:column>
+			  <h:column>
+			    <f:facet name="header">
+			     Valor
+			    </f:facet>
+			     <h:outputText value="#{exibe.valor}"/>
+			  </h:column>
+		
+			 
+		</h:dataTable> 
+         </div>
+      </div>
+   </div>
+ </div>
+	    
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Finalizar</a>
+    </div>
+  </div>
 	<!--  Scripts-->
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="resources/js/materialize.js"></script>

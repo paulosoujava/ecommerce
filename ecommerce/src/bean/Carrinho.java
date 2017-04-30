@@ -46,6 +46,9 @@ public class Carrinho  implements Serializable{
 	private Video video1;
 	private Video video2;
 	
+	//CARRINHO
+	private List<Object>listCarrinho = new ArrayList<>();
+	private List<Produto> listProdutp = new ArrayList<>();
 	
 	public Carrinho(){
 		BannerDAO b = new BannerDAO();
@@ -250,6 +253,18 @@ public class Carrinho  implements Serializable{
 		   v.setUrl(url_default);
 			return v;
 	 }
+	 
+	 //CARRINHO
+	 //***************************************************************************
+	 public void carrinho(Object o ){
+		 System.err.println("########################### ADD OBJETO ########################### "+ o.toString());
+		 this.listCarrinho.add(o);
+	 }
+	 public List<Produto> getCarrinhoProduto(){
+		
+		 return  (List<Produto>) (Object) listCarrinho;
+	 }
+
 	 
 	 //lista de produtos por tipo 
 	 // 1 - adesivo 2 - curso 3 - jogo 4 - diver
