@@ -298,7 +298,7 @@
 										</h:form>
 										<div class="card hoverable">
 										<div class="card-image">
-												<img src="#{j.img1}" />
+												<img src="#{j.img1}" width="200" height="150" />
 												<a href="item.html"
 													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
 													#{j.valor}</a> <a href="item.html"
@@ -322,7 +322,7 @@
 										  <h:commandButton action="#{carBean.carrinho(a)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="quero" />
 										</h:form>
 										<div class="card-image">
-												<img src="#{a.img1}" />
+												<img src="#{a.img1}" width="200" height="150"/>
 												<a href="item.html"
 													class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
 													#{a.valor}</a> <a href="item.html"
@@ -347,7 +347,7 @@
 										</h:form>
 											<div class="card hoverable">
 											<div class="card-image">
-													<img src="#{c.img1}" />
+													<img src="#{c.img1}" width="200" height="150" />
 													<a href="item.html"
 														class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light green">R$
 														#{c.valor}</a> <a href="item.html"
@@ -414,7 +414,7 @@
 		  </h:form>
 			<div class="card ">
 			<div class="card-image ">
-					<img  src="#{d.img1}" />
+					<img  src="#{d.img1}" width="400" height="520" />
 				</div>
 			
 					<a href="" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light black">
@@ -475,9 +475,17 @@
 	</footer>
 
       <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+  <div id="modal1" class="modal" style="height: auto; position: absolute; ">
     <div class="modal-content">
-      <h4>Carrinho</h4>
+      <h4>Carrinho [ #{carBean.carrinhoProduto.size()} ] </h4>
+        <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn btn-block teal">Continuar Comprando</a>
+      <h:form>
+       <h:commandButton action="#{carBean.finalizando(carBean.carrinhoProduto)}" value="Finalizar Compra" 
+        class="green modal-action modal-close btn btn-block  "  />
+      </h:form>
+      
+    </div>
         <div class="row ">
           <div class="col s12 m12" >
             <div class="card-panel ">
@@ -490,9 +498,7 @@
 			    <img  src="#{exibe.img1}" width="40" height="40"/>
 			     
 			  </h:column>
-		
-			
-			  <h:column>
+		    <h:column>
 			    <f:facet name="header">
 			     Produto
 			    </f:facet>
@@ -512,14 +518,9 @@
    </div>
  </div>
 	    
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Continuar Comprando</a>
-      <h:form>
-       <h:commandButton action="#{carBean.finalizando(carBean.carrinhoProduto)}" value="Finalizar Compra"  class="modal-action modal-close waves-effect waves-green btn-flat" />
-      </h:form>
-      
-    </div>
+  </div>
+    
+  
   </div>
 	<!--  Scripts-->
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

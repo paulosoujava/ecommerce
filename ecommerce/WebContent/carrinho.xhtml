@@ -92,7 +92,8 @@
 				    <f:facet name="header" class="right">
 				     Opção
 				    </f:facet>
-				     <h:commandButton  value="Deletar"  class=" btn btn-small blue" />
+				     <h:commandButton  value="Refresh"  class=" btn btn-small blue col s4 m4 "  />
+				     <h:commandButton  value="Deletar"  class=" btn btn-small red  col s4 m4 " />
 				  </h:column>
 	         </h:dataTable>
 	
@@ -109,7 +110,7 @@
 									para a pagina de login, para assim digitar o edereço da entrega</small>
 							</p>
 							<h:form>
-							 <h:commandButton action="" value="Finalizar" />v />
+							 <h:commandButton action="#{carBean.finalizarPagamento()}" value="Finalizar" class="btn btn-block right btn-large" />
 							</h:form>
 						</div>
 					</div>
@@ -153,8 +154,8 @@
 		</div>
 		<div class="footer-copyright">
 			<div class="container">
-				Made by <a class="brown-text text-lighten-3"
-					href="http://materializecss.com">Materialize</a>
+				Area restrita<a class="brown-text text-lighten-3"
+					href="adm_login.xhtml">ADM</a>
 			</div>
 		</div>
 	</footer>

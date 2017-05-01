@@ -301,7 +301,7 @@ public class Carrinho  implements Serializable{
 	 }
 	 //finalizar pagamento
 	 public String finalizarPagamento(){
-		 return "logar.xhtml";
+		 return "login.xhtml";
 	 }
 	 
 //gett set
