@@ -47,6 +47,8 @@ public class Compra {
 		this.status = status;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "Compra [pessoa=" + pessoa + ", endereco=" + endereco + ", produto=" + produto + "]";

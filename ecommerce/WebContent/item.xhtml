@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Parallax Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="resources/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="resources/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+</head>
+<body>
+
+	<div class="navbar-fixed z-depth-5"> 
+	    <nav>
+	    <a href="#!"  style="padding-left: 10px"  class="brand-logo white-text">Nerdão <small>&lt;
+					sua loja nerd on-line /&gt;</small></a>
+     
+     <h:panelGroup rendered="#{carBean.listCarrinho.size() > 0}">
+      <div  class="nav-wrapper right" style="padding-right: 5px">
+         <a href="#modal1" class="btn-floating btn-large teal navbar-fixed pulse">
+    		  <i class="large material-icons">shopping_cart</i>
+    	</a>
+      </div>
+      </h:panelGroup>
+    </nav>
+
+    
+    
+    
+  </div>
+
+  <div class="fixed-action-btn toolbar " >
+  
+    <a class="btn-floating btn-large red white-text ">
+      <i class="large material-icons">reorder</i>
+    </a>
+    <ul>
+      <li class="waves-effect waves-light"><a href="login.xhtml"><i class="material-icons">LOGIN</i></a></li>
+      <li class="waves-effect waves-light"><a href="contato.html"><i class="material-icons">CONTATO</i></a></li>
+    </ul>
+  </div>
+
+
+     
+   
+
+      <!--   Icon Section   -->
+      <div class="row ">
+        <div class="col s12 m4" >
+         
+            <div class="card-panel ">
+            <p class="flow-text blue-text"> #{carBean.itemPromocao.nome}</p> 
+             <div class="row" >
+            <div class="col s12 m12 " >
+			    <div class="col s12 m12	 " style="margin-left: 30px">
+			      <div class="card  hoverable">
+			        <div class="card-image">
+			          <img class="materialboxed" width="650" src=" #{carBean.itemPromocao.img1}" />
+			         
+			        </div>
+			  
+			     </div>
+			      
+			      
+			    </div>
+			      <div class="col s12 m12 l5 xl5" style="margin-left: 30px">
+			     
+					      <div class="card ">
+					        <div class="card-image hoverable">
+					          <img class="materialboxed" width="650" src=" #{carBean.itemPromocao.img2}" />
+					         
+					        </div>
+					 
+					    </div>
+			      </div>
+			            <div class="col s12 m12 l5 xl5" style="margin-left: 30px">
+			     
+					      <div class="card  hoverable">
+					        <div class="card-image">
+					          <img class="materialboxed" width="650" src=" #{carBean.itemPromocao.img3}" />
+					         
+					        </div>
+					  	
+					    </div>
+			      </div>
+			      </div>
+			  </div> 
+          </div>
+        </div>
+
+        <div class="col s12 m8">
+          <div class="icon-block">
+        
+           <div class="row">
+			 <h2> #{carBean.itemPromocao.nome}</h2>
+			<p>
+			 #{carBean.itemPromocao.desc}
+			
+			</p>
+			<div class="card black-text" style="padding: 20px"><strong>
+					Por R$ #{carBean.itemPromocao.valor}
+					</strong>
+			</div>
+			<hr />
+			<h:form>
+			
+			<h:commandButton action="#{carBean.carrinho(carBean.promocao1)}" class="col s5 m5  btn left btn-block  halfway-fab waves-effect waves-light blue" value="Add" />
+					
+			<a href="index.xhtml" class="btn btn-block gray right col s5 m5 ">Voltar</a>
+			</h:form>
+			
+			
+			  </div> 
+          <h2 class="flow-text">Quem comprou comentou...</h2>
+           <div class="col s12 m12  l12 ">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="resources/imagem_site/nerd1.jpg" alt="" class="circle responsive-img" /> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+               O produto chegou bem rápido. Sou cliente das lojas físicas da Aleatory e sempre fiquei satisfeita com a qualidade dos produtos ofertados. Como não encontro aqui em Recife, camisas com manga longa, resolvi comprar pelo site. Só que a qualidade da camisa é muito abaixo daquelas que adquiri nas lojas. Com isso, devolvi a camisa solicitando o ressarcimento do valor. Estou no aguardo dessa fase porque ainda está no prazo.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+             <div class="col s11 m11  l11 offset-l1 ">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="resources/imagem_site/rosto.jpg" alt="" class="circle responsive-img" /> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+               O produto chegou bem rápido. Sou cliente das lojas físicas da Aleatory e sempre fiquei satisfeita com a qualidade dos produtos ofertados. Como não encontro aqui em Recife, camisas com manga longa, resolvi comprar pelo site. Só que a qualidade da camisa é muito abaixo daquelas que adquiri nas lojas. Com isso, devolvi a camisa solicitando o ressarcimento do valor. Estou no aguardo dessa fase porque ainda está no prazo.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+             </div>
+        </div>
+      </div>  
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Sobre nós</h5>
+          <p class="grey-text text-lighten-4">
+          Somos um grupo de nerd em busca de  disponibilizar o melhor conteúdo nerd on-line seja novo ou usado, aqui você, compra,
+          vende ou troca...
+          </p>
+
+
+        </div>	
+        <div class="col l6 s12">
+          <h5 class="white-text">NewsLetter</h5>
+          <ul>
+            <li>
+            <form class="col s12">
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <input id="first_name" type="text" class="validate" />
+			          <label for="first_name" class="white-text">Digite seu melhor email</label><br />
+			          <button class="btn  btn-block right">Enviar</button>
+			        </div>
+				        
+        </div>
+        </form>
+            </li>
+          </ul>
+        </div>
+ 
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Acesso Restrito <a class="brown-text text-lighten-3" href="adm_login.xhtml">ADM</a>
+      </div>
+    </div>
+  </footer>
+
+
+     <!-- Modal Structure -->
+  <div id="modal1" class="modal" style="height: auto; position: absolute; ">
+    <div class="modal-content">
+      <h4>Carrinho [ #{carBean.carrinhoProduto.size()} ] </h4>
+        <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn btn-block teal">Continuar Comprando</a>
+      <h:form>
+       <h:commandButton action="#{carBean.finalizando(carBean.carrinhoProduto)}" value="Finalizar Compra" 
+        class="green modal-action modal-close btn btn-block  "  />
+      </h:form>
+      
+    </div>
+        <div class="row ">
+          <div class="col s12 m12" >
+            <div class="card-panel ">
+              <div class="row">
+           <h:dataTable   class="bordered highlight" value="#{carBean.carrinhoProduto}" var="exibe">   
+			  <h:column>
+			    <f:facet name="header">
+			     Foto
+			    </f:facet>
+			    <img  src="#{exibe.img1}" width="40" height="40"/>
+			     
+			  </h:column>
+		    <h:column>
+			    <f:facet name="header">
+			     Produto
+			    </f:facet>
+			     <h:outputText value="#{exibe.nome}"/>
+			  </h:column>
+			  <h:column>
+			    <f:facet name="header">
+			     Valor
+			    </f:facet>
+			     <h:outputText value="#{exibe.valor}"/>
+			  </h:column>
+		
+			 
+		</h:dataTable> 
+         </div>
+      </div>
+   </div>
+ </div>
+	    
+  </div>
+    
+  
+  </div>
+
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="resources/js/materialize.js"></script>
+  <script src="resources/js/init.js"></script>
+
+  </body>
+</html>
+

@@ -13,7 +13,8 @@ public class Produto {
 	private String img2;
 	private String img3;
 	private Integer tipo;
-	
+
+	private Integer qtd = 1; //default 
 	
 	
 	public Integer getIdProduto() {
@@ -74,6 +75,14 @@ public class Produto {
 	}
 	public void setTipo(Integer tipo) {
 		this.tipo = tipo;
+	}
+	
+	
+	public Integer getQtd() {
+		return qtd;
+	}
+	public void setQtd(Integer qtd) {
+		this.qtd = qtd;
 	}
 	@Override
 	public String toString() {

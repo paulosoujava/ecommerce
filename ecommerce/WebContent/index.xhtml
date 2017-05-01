@@ -22,27 +22,7 @@
 <body>
 
 
-	<!-- <nav class="white" role="navigation">
-		<div class="nav-wrapper container">
-			<a id="logo-container" href="#" class="brand-logo">NERDÃO <small>&lt;
-					sua loja nerd on-line /&gt;</small></a>
-			<ul class="right hide-on-med-and-down">
-				<li><a href="login.html">Login</a></li>
-				<li><a href="cadastro.html">Cadastro</a></li>
-				<li><a href="contato.html">Contato</a></li>
-				Dropdown Trigger
-				 <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
-   
-			</ul>
 
-			<ul id="nav-mobile" class="side-nav">
-				<li><a href="">Login</a></li>
-				<li><a href="">Cadastro</a></li>
-				<li><a href="">Contato</a></li>
-			</ul>
-			 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-		</div>
-	</nav> -->
 	<div class="navbar-fixed z-depth-5"> 
 	    <nav>
 	    <a href="#!"  style="padding-left: 10px"  class="brand-logo white-text">Nerdão <small>&lt;
@@ -80,10 +60,8 @@
       <i class="large material-icons">reorder</i>
     </a>
     <ul>
-      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">insert_chart</i></a></li>
-      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>
-      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">publish</i></a></li>
-      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>
+      <li class="waves-effect waves-light"><a href="login.xhtml"><i class="material-icons">perm_identity</i></a></li>
+      <li class="waves-effect waves-light"><a href="contato.html"><i class="material-icons">email</i></a></li>
     </ul>
   </div>
 
@@ -106,8 +84,9 @@
 								<img src="#{carBean.promocao1.img1}"  height="350" />
 								<a href="item.html" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">
 								R$ #{carBean.promocao1.valor}</a>
-								 <a href="item.html" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">
-								 Ver mais...</a>
+								<h:form>
+									<h:commandButton action="#{carBean.itemPromocao(carBean.promocao1)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="ver mais..." />
+									</h:form>
 							</div>
 
 
@@ -124,9 +103,9 @@
 								<img src="#{carBean.promocao2.img1}" height="230"/>
 								<a href="item.html"
 									class="col s12 m12 btn left btn-block  halfway-fab waves-effect waves-light blue">R$
-									#{carBean.promocao2.valor}</a> <a href="item.html"
-									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">Ver
-									mais...</a>
+									#{carBean.promocao2.valor}</a><h:form>
+									<h:commandButton action="#{carBean.itemPromocao(carBean.promocao2)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="ver mais..." />
+									</h:form>
 
 							</div>
 						</div>
@@ -140,9 +119,9 @@
 								<img src= "#{carBean.promocao3.img1}" height="230"/>
 								<a href="item.html"
 									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">R$
-									#{carBean.promocao3.valor}.</a> <a href="item.html"
-									class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue">Ver
-									mais...</a>
+									#{carBean.promocao3.valor}.</a> <h:form>
+									<h:commandButton action="#{carBean.itemPromocao(carBean.promocao3)}" class="col s12 m12  btn left btn-block  halfway-fab waves-effect waves-light blue" value="ver mais..." />
+									</h:form>
 
 							</div>
 
@@ -163,7 +142,9 @@
 							<li><img src=" #{carBean.slaid_um.imgBannerPrin}"  width="400" height="400"/> <!-- random image -->
 								<div class="caption center-align">
 									<h3 style="margin-left: 28px; color: red">#{carBean.slaid_um.produto.nome}
-									 <button class=" center center-align center-block btn btn-block blue">Quero</button></h3>
+									 <button class=" center center-align center-block btn btn-block blue">Quero</button>
+								
+									 </h3>
 								</div>
 							 </li>
 							<li><img src="#{carBean.slaid_dois.imgBannerPrin}"  width="400" height="400" /> <!-- random image -->
@@ -522,6 +503,8 @@
     
   
   </div>
+
+
 	<!--  Scripts-->
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="resources/js/materialize.js"></script>

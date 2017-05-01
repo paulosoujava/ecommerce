@@ -29,14 +29,14 @@
              
               <div class="row"  style="margin-left: 60px">
 		        <div class="input-field col s10 m10">
-		          <h:inputText id="email" class="validate" value="#{ctrlLogin.p.email}"  required="true" requiredMessage="Por favor digite a senha"/>
+		          <h:inputText id="email" class="validate" value="#{ctrlLogin.pessoa.email}"  required="true" requiredMessage="Por favor digite a senha"/>
 		          <label for="email">Email</label>
 		          <div class="small" style="margin-left: -145px; margin-top: -10px "><h:message for="email"  style="color: red;"  /></div>
 		        </div>
 		      </div>	
                 <div class="row" style="margin-left: 60px; ">
                 <div class="input-field col s10 m10 ">
-		          <h:inputSecret   value="#{ctrlLogin.p.senha}" id="password"  required="true"  requiredMessage="Por favor digite seu email"/>
+		          <h:inputSecret   value="#{ctrlLogin.pessoa.senha}" id="password"  required="true"  requiredMessage="Por favor digite seu email"/>
 		          <label for="password">Senha</label>
 		          <div class="small" style="margin-left: -130px; margin-top: -10px "> <h:message for="password" style="color: red; margin-left: -10px"/></div> 
 		        </div>

@@ -1,7 +1,8 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -15,30 +16,15 @@
 </head>
 <body>
 
-<!-- Dropdown Structure -->
-<!-- <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Cadastro</a></li>
-  <li><a href="#!">Login</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">Contato</a></li>
-</ul> -->
-<div class="navbar-fixed z-depth-5">
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">NERDÃO  <small>&lt; sua loja nerd on-line /&gt;</small></a>
-      <ul class="right hide-on-med-and-down">
-        
-        <li><a href="">Voltar</a> </li>
-     
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-      
-        <li><a href="index.xhtml">Home</a> </li>
-      </ul>
-     <!--  <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> -->
-    </div>
-  </nav>
+  <div class="fixed-action-btn toolbar " >
+  
+    <a class="btn-floating btn-large red white-text ">
+      <i class="large material-icons">reorder</i>
+    </a>
+    <ul>
+      <li class="waves-effect waves-light"><a href="contato.html"><i class="material-icons">email</i></a></li>
+      <li class="waves-effect waves-light"><a href="index.xhtml"><i class="material-icons">replay</i></a></li>
+    </ul>
   </div>
 
 
@@ -51,61 +37,67 @@
             <div class="card-panel ">
             <div class="row">
              
-            <form class="col s5  z-depth-5" >
+           <h:form class="col s5  z-depth-5"  method="post">
              <h2 class="black-text">Login</h2>
-			
+			<small class="flow-text red-text" style="font-size: 12px">#{ctrlLogin.msgLogin}</small>
             	<div class="row">
 			        <div class="input-field col s12">
-			          <input  id="first_name" type="text" class="validate" />
+			          <h:inputText value="#{ctrlLogin.pessoa.email}"  id="email"  requerid="true" />
 			          <label for="first_name">Email</label>
 			        </div>
             	</div>
             	<div class="row">
 			        <div class="input-field col s12">
-			          <input  id="first_name" type="text" class="validate" />
+			          <h:inputSecret  value="#{ctrlLogin.pessoa.senha}"  id="sennha"  requerid="true" />
 			          <label for="first_name">Senha</label>
 			        </div>
             	</div>
           
             	<div class="row">
 			        <div class="input-field col s12">
-			          <button class="btn btn-large blue right">Logar</button><br />
+			              <h:commandButton action="#{ctrlLogin.logarCliente()}" value="Cadastrar"  class="btn btn-large green right" />
+			      
 			          <small><a href="#modal1">esqueci a senha</a> </small>
 			        </div>
             	</div>
-            	</form>
-           <form class="col s7">
+            	</h:form>
+           <h:form class="col s7">
            <h2>Novo usuário</h2>
+          <small class="flow-text red-text" style="font-size: 12px">#{ctrlLogin.msg}</small>
 			      <div class="row">
-			        <div class="input-field col s12">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
-			          <label for="first_name">Name</label>
+			        <div class="input-field col s6">
+			          <h:inputText value="#{ctrlLogin.cliente.nome}"  id="nome"  requerid="true" />
+			          <label for="nome">Name</label>
+			        </div>
+			        <div class="input-field col s6">
+			          <h:inputText value="#{ctrlLogin.cliente.sobreNome}"  id="sobre"  requerid="true" />
+			          <label for="sobre">sobre nome</label>
 			        </div>
             	</div>
             	<div class="row">
 			        <div class="input-field col s12">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
-			          <label for="first_name">Email</label>
+			          <h:inputText value="#{ctrlLogin.cliente.email}"  id="email"  requerid="true" />
+			          <label for="email">Email</label>
 			        </div>
             	</div>
             	<div class="row">
 			        <div class="input-field col s12">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
-			          <label for="first_name">Senha</label>
+			          <h:inputSecret  value="#{ctrlLogin.cliente.senha}"  id="sennha"  requerid="true" />
+			          <label for="senha">Senha</label>
 			        </div>
             	</div>
             	<div class="row">
 			        <div class="input-field col s12">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
-			          <label for="first_name">Rep. Senha</label>
+			          <h:inputSecret value="#{ctrlLogin.senha}"  id="rSenha"  requerid="true" />
+			          <label for="rSenha">Rep. Senha</label>
 			        </div>
             	</div>
             	<div class="row">
 			        <div class="input-field col s12">
-			          <button class="btn btn-large green right">Cadastrar</button>
+			          <h:commandButton action="#{ctrlLogin.cadastrar(ctrlLogin.cliente)}" value="Cadastrar"  class="btn btn-large green right" />
 			        </div>
             	</div>
-            	</form>
+            	</h:form> 
            
            
            </div>

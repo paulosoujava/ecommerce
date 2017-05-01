@@ -25,6 +25,7 @@ public class Carrinho  implements Serializable{
 	 */
 	private static final long serialVersionUID = 2638169811790410644L;
     private Produto produto = new Produto();
+    private Produto itemPromocao = new Produto();
 	
 	//SLAIDS -- 4
 	private Banner slaid_um;
@@ -266,6 +267,24 @@ public class Carrinho  implements Serializable{
 		 return  ((List<Produto>) (Object) listCarrinho);
 	 }
 
+
+	 //remove PEDIDO
+	 public void remove( Produto p){
+		 
+		 for( int i = 0 ; i < listProdutDoCarrinho.size(); i++ ){
+			 if( p.getIdProduto() == listProdutDoCarrinho.get(i).getIdProduto() ){
+				listProdutDoCarrinho.remove(i);
+			
+			 }
+		 }
+	 } 
+	 
+	 //VER ITEM PROMOCAO
+	 public String itemPromocao( Produto p  ){
+		 this.itemPromocao = p;
+		 return "item.xhtml ";
+	 }
+	 
 	 
 	 //lista de produtos por tipo 
 	 // 1 - adesivo 2 - curso 3 - jogo 4 - diver
@@ -448,6 +467,17 @@ public class Carrinho  implements Serializable{
 	public void setListCarrinho(List<Object> listCarrinho) {
 		this.listCarrinho = listCarrinho;
 	}
+
+
+	public Produto getItemPromocao() {
+		return itemPromocao;
+	}
+
+
+	public void setItemPromocao(Produto itemPromocao) {
+		this.itemPromocao = itemPromocao;
+	}
+	
 	
 	//******************************************************************
 

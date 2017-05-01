@@ -11,31 +11,42 @@ import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;
 
+import dao.EnderecoDAO;
 import dao.LoginDAO;
+import dao.PessoaDAO;
+import entity.Cidade;
+import entity.Endereco;
+import entity.Estado;
 import entity.Pessoa;
 
 @ManagedBean(name = "ctrlLogin")
-@RequestScoped
+@SessionScoped
 public class Login implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 6493704355085121657L;
-	private Pessoa p = new Pessoa();
-	private String msg = "";
+	private Pessoa pessoa  = new Pessoa();
+	private Pessoa cliente  = new Pessoa();
 	
+	private String msg = "";
+	private String senha = "";
+	private String msgLogin = "";
+	
+	
+	//ADMIN
 	public String logar(){
 		
 		Pessoa newPessoa = new Pessoa();
-		if( this.p != null ){
+		if( this.pessoa != null ){
 			
 		LoginDAO lD = new LoginDAO();
-		newPessoa = lD.isLogin(this.p.getEmail(), this.p.getSenha() ) ;
+		newPessoa = lD.isLogin(this.pessoa.getEmail(), this.pessoa.getSenha() ) ;
 		
 		if( newPessoa != null ){
 			
-			this.setP(newPessoa);
+			this.setPessoa(newPessoa);
 		    return "admin/admin.xhtml?faces-redirect=true";
 		
 			
@@ -48,6 +59,28 @@ public class Login implements Serializable {
 		}
 	}
 	
+	
+	public String logarCliente(){
+		Pessoa newPessoa = new Pessoa();
+		if( this.pessoa.getEmail().isEmpty() || this.pessoa.getSenha().isEmpty() ){
+			this.msgLogin = "OPSS, n a senha/email estão vazias?";
+			return null;
+		}else{
+				LoginDAO lD = new LoginDAO();
+				newPessoa = lD.isCliente(this.pessoa.getEmail(), this.pessoa.getSenha() ) ;
+				System.out.println(newPessoa + " ***************************************** ");
+				if( newPessoa.getNome() != null  ){
+					this.setPessoa(newPessoa);
+				    return "pagamento.xhtml";
+				}else{
+					this.msgLogin = "OPSS, não encontrei, a senha/email estão corretos?";
+			       return null;
+				}
+		}
+	}
+	
+	
+	
 	public String sair(){
 		return "../index.xhtml";
 	}
@@ -56,17 +89,60 @@ public class Login implements Serializable {
 	}
 	
 
+	//cadastrar novo user
+	public void cadastrar(Pessoa p){
+		
+		 PessoaDAO pD = new PessoaDAO();
+		
+		if( p == null){
+			this.msg = "Opss, insira seus dados";
+		}else{
+			
+		  if(	pD.obterPessoa(p.getEmail()) == null ){
+			
+		if( senha.equals(p.getSenha())){
+		 
+			if(p.getEmail().indexOf("@") != -1 && p.getEmail().indexOf(".") != -1){
+				int idPessoainserido =   pD.incluir(p);
+				if( idPessoainserido  > 0 ){
+		
+					//teste
+					
+					p = new Pessoa();
+					this.msg = "Opa, cadastrado com sucesso, já pode usar sua senha e login para acessa;";
+				}else{
+					this.msg ="Opaa, erro nosso ";
+				}
+			}else{
+				this.msg = "Opsss, digite um email válido.";
+			}
+		}else{
+			this.msg = "Opsss, senhas não conferem.";
+		}
+		  }else{
+				this.msg ="Opaa, já existe um usuário cadastrado com este email ";
+			}
+	 }
+		
+	}
 	
-	public Pessoa getP() {
-		return p;
+	
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
 
-	public void setP(Pessoa p) {
-		this.p = p;
+	public void setPessoa(Pessoa p) {
+		this.pessoa = p;
 	}
 
 
 
+	public Pessoa getCliente() {
+		return cliente;
+	}
+	public void setCliente(Pessoa cliente) {
+		this.cliente = cliente;
+	}
 	public String getMsg() {
 		return msg;
 	}
@@ -75,6 +151,20 @@ public class Login implements Serializable {
 
 	public void setMsg(String msg) {
 		this.msg = msg;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	public String getMsgLogin() {
+		return msgLogin;
+	}
+	public void setMsgLogin(String msgLogin) {
+		this.msgLogin = msgLogin;
 	}
 
 	

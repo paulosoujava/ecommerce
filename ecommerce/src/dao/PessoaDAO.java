@@ -14,6 +14,7 @@ import entity.Cidade;
 import entity.Endereco;
 import entity.Estado;
 import entity.Pessoa;
+import entity.Produto;
 
 public class PessoaDAO {
 
@@ -29,45 +30,68 @@ public class PessoaDAO {
 
 	//cadastro da pessoa no banco retornando o id da pessoa cadastrada
 	public int incluir(Pessoa pessoa) {
-		this.getConexao();
-		int idInserido = 0;
-		String sql = "INSERT INTO Pessoa (nome, sobrenome,  cpf, fone, email, senha,  dataCadastro) VALUES (?, ?, ?, ?, ?, ?, ?)";
-		try {
-			PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			// seta os valores
-			stmt.setString(1, pessoa.getNome());
-			stmt.setString(2, pessoa.getSobreNome());
-			stmt.setString(3, pessoa.getCpf());
-			stmt.setString(4, pessoa.getFone());
-			stmt.setString(5, pessoa.getEmail());
-			stmt.setString(6, pessoa.getSenha());
-			stmt.setDate(7, new java.sql.Date(java.util.Calendar.getInstance().getTimeInMillis()));
-			
-			
-			// executa
-			stmt.executeUpdate();
-
-			ResultSet rs = stmt.getGeneratedKeys();
-
-			if (rs.next()) {
-				idInserido = rs.getInt(1);
+		Pessoa p = obterPessoa(pessoa.getEmail());
+		
+		//verificar se ja nao esta incluso
+		if( p == null ){
+		
+			this.getConexao();
+			int idInserido = 0;
+			String sql = "INSERT INTO Pessoa (nome, sobrenome,  cpf, fone, email, senha, nivel, logado  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			try {
+				PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+				// seta os valores
+				stmt.setString(1, pessoa.getNome());
+				stmt.setString(2, pessoa.getSobreNome());
+				stmt.setString(3, pessoa.getCpf());
+				stmt.setString(4, pessoa.getFone());
+				stmt.setString(5, pessoa.getEmail());
+				stmt.setString(6, pessoa.getSenha());
+				stmt.setInt(7, 0);
+				stmt.setInt(8, 0);
+				
+				
+				// executa
+				stmt.executeUpdate();
+	
+				ResultSet rs = stmt.getGeneratedKeys();
+	
+				if (rs.next()) {
+					idInserido = rs.getInt(1);
+					//ja incluimos um endereco VAZIO
+					EnderecoDAO ed = new EnderecoDAO();
+					Endereco en = new  Endereco();
+					Cidade c = new Cidade();
+					Estado estado = new Estado();
+					en.setBairro("");
+					en.setCep(0);
+					en.setComp("");
+					en.setNome("");
+					en.setMumero(0);
+					en.setRef("");
+					c.setCidade("");
+					estado.setSigla(" ");
+					ed.incluir(en, idInserido, c, estado);
+				}
+	
+				if (idInserido > 0) {
+					System.out.println("Pessoa inserida com sucesso");
+				} else {
+					System.out.println("Erro ao inserir pessoa");
+				}
+	
+				stmt.close();
+	
+				return idInserido;
+				
+			} catch (SQLException e) {
+				System.out.println("Erro ao inserir pessoa: " + e.getMessage());
+				throw new RuntimeException(e);
+			} finally {
+				ConnectionFactory.fecharConexao(this.conexao);
 			}
-
-			if (idInserido > 0) {
-				System.out.println("Pessoa inserida com sucesso");
-			} else {
-				System.out.println("Erro ao inserir pessoa");
-			}
-
-			stmt.close();
-
-			return idInserido;
-			
-		} catch (SQLException e) {
-			System.out.println("Erro ao inserir pessoa: " + e.getMessage());
-			throw new RuntimeException(e);
-		} finally {
-			ConnectionFactory.fecharConexao(this.conexao);
+		}else{
+			return 0;
 		}
 	}
 		
@@ -110,9 +134,12 @@ public class PessoaDAO {
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				pessoa = new Pessoa();
-				pessoa.setId(rs.getInt("id"));
+				pessoa.setId(rs.getInt("idpessoa"));
 				pessoa.setNome(rs.getString("nome"));
 				pessoa.setSobreNome(rs.getString("sobrenome"));
+				pessoa.setEmail(rs.getString("email"));
+				pessoa.setCpf(rs.getString("cpf"));
+				pessoa.setFone(rs.getString("fone"));
 				System.out.println("PESSOA: " + pessoa.getId() + " :: ");
 			}
 
@@ -246,4 +273,52 @@ public class PessoaDAO {
 		return false;
 	}
 	
+	
+	public int atualizar(Pessoa p ) {
+		this.getConexao();
+		int idInserido = 0;
+		
+		
+		String sql = "UPDATE pessoa SET nome=?, sobrenome=?, fone=?, cpf=? WHERE idpessoa=? ";
+
+				
+		try {
+			PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			// seta os valores
+			stmt.setString(1, p.getNome());
+			stmt.setString(2, p.getSobreNome());
+			stmt.setString(3, p.getFone());
+			stmt.setString(4, p.getCpf());
+			stmt.setInt(5, p.getId());
+			
+			// executa
+			stmt.executeUpdate();
+
+			ResultSet rs = stmt.getGeneratedKeys();
+
+			if (rs.next()) {
+				idInserido = rs.getInt(1);
+			}
+
+			if (idInserido > 0) {
+				System.out.println("PEssoa atualizado com sucesso");
+			} else {
+				System.out.println("Erro ao atualizar pessoa");
+			}
+
+			stmt.close();
+
+			return idInserido;
+			
+		} catch (SQLException e) {
+			System.out.println("Erro ao atualizar pessoa: " + e.getMessage());
+			throw new RuntimeException(e);
+		} finally {
+			ConnectionFactory.fecharConexao(this.conexao);
+		}
 	}
+
+
+
+
+}
