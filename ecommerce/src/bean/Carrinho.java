@@ -48,11 +48,11 @@ public class Carrinho  implements Serializable{
 	
 	//CARRINHO
 	private List<Object>listCarrinho = new ArrayList<>();
-	private List<Produto> listProdutp = new ArrayList<>();
+	private List<Produto> listProdutDoCarrinho = new ArrayList<>();
 	
 	public Carrinho(){
 		BannerDAO b = new BannerDAO();
-		ProdutoDAO p = new ProdutoDAO();
+		PromocaoDAO pr = new PromocaoDAO();
 		VideoDAO v = new VideoDAO();
 		//init slaid
 		int sizeB = b.obterProdutos().size();
@@ -100,11 +100,11 @@ public class Carrinho  implements Serializable{
 		}
 			
 		// init promocao	
-			 int size = p.obterProdutos().size();
+			 int size = pr.obterProdutos().size();
 			 System.err.println(size + " *********************************************");
 		switch (size) {
 			case 0:
-				this.promocao1 =    this.getPromocao_default()  ;
+				 this.promocao1 =    this.getPromocao_default()  ;
 				  this.promocao2 =  this.getPromocao_default()  ;
 				  this.promocao3 =  this.getPromocao_default()  ;
 				  this.promocao4 =  this.getPromocao_default()  ;
@@ -113,7 +113,7 @@ public class Carrinho  implements Serializable{
 				  this.promocao7 =  this.getPromocao_default()  ;
 				break;
 			case 1: //cria 6
-				this.promocao1 = (!(p.obterProdutos().get(0) == null) ? p.obterProdutos().get(0) : this.getPromocao_default()  );
+				this.promocao1 = (!(pr.obterProdutos().get(0) == null) ? pr.obterProdutos().get(0) : this.getPromocao_default()  );
 				  this.promocao2 =  this.getPromocao_default()  ;
 				  this.promocao3 =  this.getPromocao_default()  ;
 				  this.promocao4 =  this.getPromocao_default()  ;
@@ -122,8 +122,8 @@ public class Carrinho  implements Serializable{
 				  this.promocao7 =  this.getPromocao_default()  ;
 				break;
 			case 2: //cria 5
-				 this.promocao1 = (!(p.obterProdutos().get(0) == null) ? p.obterProdutos().get(0) : this.getPromocao_default()  );
-				  this.promocao2 = (!(p.obterProdutos().get(1) == null) ? p.obterProdutos().get(1) : this.getPromocao_default()  );
+				 this.promocao1 = (!(pr.obterProdutos().get(0) == null) ? pr.obterProdutos().get(0) : this.getPromocao_default()  );
+				  this.promocao2 = (!(pr.obterProdutos().get(1) == null) ? pr.obterProdutos().get(1) : this.getPromocao_default()  );
 				  this.promocao3 =   this.getPromocao_default()  ;
 				  this.promocao4 =  this.getPromocao_default()  ;
 				  this.promocao5 =  this.getPromocao_default()  ;
@@ -131,51 +131,51 @@ public class Carrinho  implements Serializable{
 				  this.promocao7 =  this.getPromocao_default()  ;
 						break;
 			case 3: //cria 4
-				 this.promocao1 = (!(p.obterProdutos().get(0) == null) ? p.obterProdutos().get(0) : this.getPromocao_default()  );
-				  this.promocao2 = (!(p.obterProdutos().get(1) == null) ? p.obterProdutos().get(1) : this.getPromocao_default()  );
-				  this.promocao3 = (!(p.obterProdutos().get(2) == null) ? p.obterProdutos().get(2) : this.getPromocao_default()  );
+				 this.promocao1 = (!(pr.obterProdutos().get(0) == null) ? pr.obterProdutos().get(0) : this.getPromocao_default()  );
+				  this.promocao2 = (!(pr.obterProdutos().get(1) == null) ? pr.obterProdutos().get(1) : this.getPromocao_default()  );
+				  this.promocao3 = (!(pr.obterProdutos().get(2) == null) ? pr.obterProdutos().get(2) : this.getPromocao_default()  );
 				  this.promocao4 =  this.getPromocao_default()  ;
 				  this.promocao5 =  this.getPromocao_default()  ;
 				  this.promocao6 =  this.getPromocao_default()  ;
 				  this.promocao7 =  this.getPromocao_default()  ;
 				break;
 			case 4: //cria 3
-				  this.promocao1 = (!(p.obterProdutos().get(0) == null) ? p.obterProdutos().get(0) : this.getPromocao_default()  );
-				  this.promocao2 = (!(p.obterProdutos().get(1) == null) ? p.obterProdutos().get(1) : this.getPromocao_default()  );
-				  this.promocao3 = (!(p.obterProdutos().get(2) == null) ? p.obterProdutos().get(2) : this.getPromocao_default()  );
-				  this.promocao4 = (!(p.obterProdutos().get(3) == null) ? p.obterProdutos().get(3) : this.getPromocao_default()  );
+				  this.promocao1 = (!(pr.obterProdutos().get(0) == null) ? pr.obterProdutos().get(0) : this.getPromocao_default()  );
+				  this.promocao2 = (!(pr.obterProdutos().get(1) == null) ? pr.obterProdutos().get(1) : this.getPromocao_default()  );
+				  this.promocao3 = (!(pr.obterProdutos().get(2) == null) ? pr.obterProdutos().get(2) : this.getPromocao_default()  );
+				  this.promocao4 = (!(pr.obterProdutos().get(3) == null) ? pr.obterProdutos().get(3) : this.getPromocao_default()  );
 				  this.promocao5 =  this.getPromocao_default()  ;
 				  this.promocao6 =  this.getPromocao_default()  ;
 				  this.promocao7 =  this.getPromocao_default()  ;
 				break;
 			case 5: //cria 2
-				  this.promocao1 = (!(p.obterProdutos().get(0) == null) ? p.obterProdutos().get(0) : this.getPromocao_default()  );
-				  this.promocao2 = (!(p.obterProdutos().get(1) == null) ? p.obterProdutos().get(1) : this.getPromocao_default()  );
-				  this.promocao3 = (!(p.obterProdutos().get(2) == null) ? p.obterProdutos().get(2) : this.getPromocao_default()  );
-				  this.promocao4 = (!(p.obterProdutos().get(3) == null) ? p.obterProdutos().get(3) : this.getPromocao_default()  );
-				  this.promocao5 = (!(p.obterProdutos().get(4) == null) ? p.obterProdutos().get(4) : this.getPromocao_default()  );
+				  this.promocao1 = (!(pr.obterProdutos().get(0) == null) ? pr.obterProdutos().get(0) : this.getPromocao_default()  );
+				  this.promocao2 = (!(pr.obterProdutos().get(1) == null) ? pr.obterProdutos().get(1) : this.getPromocao_default()  );
+				  this.promocao3 = (!(pr.obterProdutos().get(2) == null) ? pr.obterProdutos().get(2) : this.getPromocao_default()  );
+				  this.promocao4 = (!(pr.obterProdutos().get(3) == null) ? pr.obterProdutos().get(3) : this.getPromocao_default()  );
+				  this.promocao5 = (!(pr.obterProdutos().get(4) == null) ? pr.obterProdutos().get(4) : this.getPromocao_default()  );
 				  this.promocao6 =  this.getPromocao_default()  ;
 				  this.promocao7 =  this.getPromocao_default()  ;
 				
 				break;
 			case 6: //cria 1
-				  this.promocao1 = (!(p.obterProdutos().get(0) == null) ? p.obterProdutos().get(0) : this.getPromocao_default()  );
-				  this.promocao2 = (!(p.obterProdutos().get(1) == null) ? p.obterProdutos().get(1) : this.getPromocao_default()  );
-				  this.promocao3 = (!(p.obterProdutos().get(2) == null) ? p.obterProdutos().get(2) : this.getPromocao_default()  );
-				  this.promocao4 = (!(p.obterProdutos().get(3) == null) ? p.obterProdutos().get(3) : this.getPromocao_default()  );
-				  this.promocao5 = (!(p.obterProdutos().get(4) == null) ? p.obterProdutos().get(4) : this.getPromocao_default()  );
-				  this.promocao6 = (!(p.obterProdutos().get(5) == null) ? p.obterProdutos().get(5) : this.getPromocao_default()  );
+				  this.promocao1 = (!(pr.obterProdutos().get(0) == null) ? pr.obterProdutos().get(0) : this.getPromocao_default()  );
+				  this.promocao2 = (!(pr.obterProdutos().get(1) == null) ? pr.obterProdutos().get(1) : this.getPromocao_default()  );
+				  this.promocao3 = (!(pr.obterProdutos().get(2) == null) ? pr.obterProdutos().get(2) : this.getPromocao_default()  );
+				  this.promocao4 = (!(pr.obterProdutos().get(3) == null) ? pr.obterProdutos().get(3) : this.getPromocao_default()  );
+				  this.promocao5 = (!(pr.obterProdutos().get(4) == null) ? pr.obterProdutos().get(4) : this.getPromocao_default()  );
+				  this.promocao6 = (!(pr.obterProdutos().get(5) == null) ? pr.obterProdutos().get(5) : this.getPromocao_default()  );
 				  this.promocao7 =  this.getPromocao_default()  ;
 				
 				break;	
 			case 7:
-				  this.promocao1 = (!(p.obterProdutos().get(0) == null) ? p.obterProdutos().get(0) : this.getPromocao_default()  );
-				  this.promocao2 = (!(p.obterProdutos().get(1) == null) ? p.obterProdutos().get(2) : this.getPromocao_default()  );
-				  this.promocao3 = (!(p.obterProdutos().get(2) == null) ? p.obterProdutos().get(3) : this.getPromocao_default()  );
-				  this.promocao4 = (!(p.obterProdutos().get(3) == null) ? p.obterProdutos().get(4) : this.getPromocao_default()  );
-				  this.promocao5 = (!(p.obterProdutos().get(4) == null) ? p.obterProdutos().get(5) : this.getPromocao_default()  );
-				  this.promocao6 = (!(p.obterProdutos().get(5) == null) ? p.obterProdutos().get(6) : this.getPromocao_default()  );
-				  this.promocao7 = (!(p.obterProdutos().get(6) == null) ? p.obterProdutos().get(7) : this.getPromocao_default()  );
+				  this.promocao1 = (!(pr.obterProdutos().get(0) == null) ? pr.obterProdutos().get(0) : this.getPromocao_default()  );
+				  this.promocao2 = (!(pr.obterProdutos().get(1) == null) ? pr.obterProdutos().get(1) : this.getPromocao_default()  );
+				  this.promocao3 = (!(pr.obterProdutos().get(2) == null) ? pr.obterProdutos().get(2) : this.getPromocao_default()  );
+				  this.promocao4 = (!(pr.obterProdutos().get(3) == null) ? pr.obterProdutos().get(3) : this.getPromocao_default()  );
+				  this.promocao5 = (!(pr.obterProdutos().get(4) == null) ? pr.obterProdutos().get(4) : this.getPromocao_default()  );
+				  this.promocao6 = (!(pr.obterProdutos().get(5) == null) ? pr.obterProdutos().get(5) : this.getPromocao_default()  );
+				  this.promocao7 = (!(pr.obterProdutos().get(6) == null) ? pr.obterProdutos().get(6) : this.getPromocao_default()  );
 				break;
 		}	 
 		
@@ -219,7 +219,7 @@ public class Carrinho  implements Serializable{
 		   p.setImg2(img_default);
 		   p.setImg3(img_default);
 		   p.setNome(nome);
-		   p.setValor((float) 99.99);
+		   p.setValor((float) 00);
 		   bdf.setImgBannerPrin(img_default);
 		   bdf.setProduto(produto);
 		   
@@ -260,9 +260,10 @@ public class Carrinho  implements Serializable{
 		 System.err.println("########################### ADD OBJETO ########################### "+ o.toString());
 		 this.listCarrinho.add(o);
 	 }
-	 public List<Produto> getCarrinhoProduto(){
+	 @SuppressWarnings("unchecked")
+	public List<Produto> getCarrinhoProduto(){
 		
-		 return  (List<Produto>) (Object) listCarrinho;
+		 return  ((List<Produto>) (Object) listCarrinho);
 	 }
 
 	 
@@ -284,16 +285,43 @@ public class Carrinho  implements Serializable{
 		  ProdutoDAO pD = new ProdutoDAO();
 		  return pD.getProdutoByTipo(4);
 	 }
+	 
+	 //finalizando pedido
+	 public String finalizando(List<Produto> p){
+		 this.listProdutDoCarrinho = p;
+		 return "carrinho.xhtml ";
+	 }
+	 //soma total do carrinho
+	 public float total(){
+		 float total =0;
+		 for( int i = 0 ; i < this.listProdutDoCarrinho.size(); i++){
+			 total += listProdutDoCarrinho.get(i).getValor();
+		 }
+		 return total;
+	 }
+	 //finalizar pagamento
+	 public String finalizarPagamento(){
+		 return "logar.xhtml";
+	 }
+	 
 //gett set
-	   
-	   
-	   
-	   
-	public Banner getSlaid_um() {
+	 
+	 
+	 public Banner getSlaid_um() {
 		return slaid_um;
 	}
 
 	
+
+	public List<Produto> getListProdutDoCarrinho() {
+		return listProdutDoCarrinho;
+	}
+
+
+	public void setListProdutDoCarrinho(List<Produto> listProdutDoCarrinho) {
+		this.listProdutDoCarrinho = listProdutDoCarrinho;
+	}
+
 
 	public Produto getPromocao1() {
 		return promocao1;
@@ -409,6 +437,16 @@ public class Carrinho  implements Serializable{
 
 	public void setVideo2(Video video1) {
 		this.video2 = video1;
+	}
+
+
+	public List<Object> getListCarrinho() {
+		return listCarrinho;
+	}
+
+
+	public void setListCarrinho(List<Object> listCarrinho) {
+		this.listCarrinho = listCarrinho;
 	}
 	
 	//******************************************************************

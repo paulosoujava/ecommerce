@@ -37,6 +37,7 @@
        <ui:include src="tpl/menu.html" />  
          <h:panelGroup rendered="#{ctrlLoj.vendaHoje.size() > 0 }">
 	    <h4>Compras Hoje</h4>
+	    
 		    <h:dataTable id="idTabela" value="#{ctrlLoj.vendaHoje}" var="h">
 		      <h:column >
 		       <h:outputText class="card teal  hoverable col s12 m12 l12" style="padding:10px; margin-bottom:-30px"  value="${h.pessoa.nome} ${h.pessoa.sobreNome}"  />
@@ -64,6 +65,7 @@
              
              #{ctrlCadBan.msg}
              </div>
+             <h:panelGroup rendered="#{ctrlCadBan.qtdBanner() != 4}"> 
             <h:form class="col s12">
 			   
            
@@ -127,6 +129,10 @@
             	</div>
             
             	</h:form>
+          </h:panelGroup>
+           <h:panelGroup rendered="#{ctrlCadBan.qtdBanner() >= 4}">
+             <h2>Limite de banner atingido</h2>
+            </h:panelGroup> 
            </div>
         </div>
 </div>

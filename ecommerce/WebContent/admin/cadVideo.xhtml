@@ -64,6 +64,7 @@
              
              #{ctrlCadVid.msg}
              </div>
+             <h:panelGroup rendered="#{ctrlCadVid.qtdVideo() != 2}"> 
             <h:form class="col s12">
 			   
            
@@ -81,6 +82,10 @@
 			        </div>
             	</div>
             	</h:form>
+              </h:panelGroup>
+           <h:panelGroup rendered="#{ctrlCadVid.qtdVideo() >= 2}">
+             <h2>Limite de banner atingido</h2>
+            </h:panelGroup> 
            </div>
         </div>
 </div>

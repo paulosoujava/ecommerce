@@ -7,6 +7,7 @@ import javax.faces.bean.RequestScoped;
 
 import dao.BannerDAO;
 import dao.ProdutoDAO;
+import dao.PromocaoDAO;
 import entity.Banner;
 import entity.Produto;
 
@@ -68,6 +69,9 @@ public class cadBanner implements Serializable {
 		this.msg = msg;
 	}
 	
-	
+	public int qtdBanner(){
+		BannerDAO p = new BannerDAO();
+		return p.obterProdutos().size();
+	}
 
 }

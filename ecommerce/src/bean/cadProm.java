@@ -50,7 +50,10 @@ public class cadProm  implements Serializable{
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	
+	public int qtdProm(){
+		PromocaoDAO p = new PromocaoDAO();
+		return p.obterProdutos().size();
+	}
 	
 
 }

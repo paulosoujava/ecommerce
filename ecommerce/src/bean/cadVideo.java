@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+import dao.BannerDAO;
 import dao.VideoDAO;
 import entity.Produto;
 import entity.Video;
@@ -51,5 +52,8 @@ public class cadVideo implements Serializable{
 		this.msg = msg;
 	}
     
-    
+	public int qtdVideo(){
+		VideoDAO p = new VideoDAO();
+		return p.obterVideo().size();
+	}
 }

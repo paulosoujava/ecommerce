@@ -47,12 +47,14 @@
 	    <nav>
 	    <a href="#!"  style="padding-left: 10px"  class="brand-logo white-text">Nerdão <small>&lt;
 					sua loja nerd on-line /&gt;</small></a>
-      <div  class="nav-wrapper right" style="padding-right: 5px">
-         <a href="#modal1" class="btn-floating btn-large teal navbar-fixed">
-      <i class="large material-icons">shopping_cart</i>
-    </a>
      
+     <h:panelGroup rendered="#{carBean.listCarrinho.size() > 0}">
+      <div  class="nav-wrapper right" style="padding-right: 5px">
+         <a href="#modal1" class="btn-floating btn-large teal navbar-fixed pulse">
+    		  <i class="large material-icons">shopping_cart</i>
+    	</a>
       </div>
+      </h:panelGroup>
     </nav>
 
     
@@ -512,8 +514,11 @@
 	    
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Finalizar</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Continuar Comprando</a>
+      <h:form>
+       <h:commandButton action="#{carBean.finalizando(carBean.carrinhoProduto)}" value="Finalizar Compra"  class="modal-action modal-close waves-effect waves-green btn-flat" />
+      </h:form>
+      
     </div>
   </div>
 	<!--  Scripts-->

@@ -8,7 +8,7 @@
   <title>Parallax Template - Materialize</title>
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="resources/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="resources/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
@@ -27,18 +27,14 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">NERDÃO  <small>&lt; sua loja nerd on-line /&gt;</small></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#"><span class="new badge blue" data-badge-caption="Carrinho ">3</span></a></li>
-        <li><a href="">Login</a> </li>
-        <li><a href="">Contato</a> </li>
-         <!-- Dropdown Trigger -->
-     <!--  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
-    -->
+        
+        <li><a href="">Voltar</a> </li>
+     
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#"><span class="new badge blue" data-badge-caption="Carrinho ">3</span></a></li>
-        <li><a href="">Login</a> </li>
-        <li><a href="">Contato</a> </li>
+      
+        <li><a href="index.xhtml">Home</a> </li>
       </ul>
      <!--  <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> -->
     </div>
@@ -48,56 +44,73 @@
 
    
 
-
       <!--   Icon Section   -->
       <div class="row ">
         <div class="col s12 m12" >
-          <h2>Cadastro</h2>
+        
             <div class="card-panel ">
             <div class="row">
-            <form class="col s12">
-			      <div class="row">
-			        <div class="input-field col s6">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-			          <label for="first_name">First Name</label>
-			        </div>
-            
-			        <div class="input-field col s6">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-			          <label for="first_name">Sobre Name</label>
-			        </div>
-            	</div>
+             
+            <form class="col s5  z-depth-5" >
+             <h2 class="black-text">Login</h2>
+			
             	<div class="row">
-			        <div class="input-field col s6">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-			          <label for="first_name">Senha</label>
-			        </div>
-            
-			        <div class="input-field col s6">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-			          <label for="first_name">Rep. Senha</label>
-			        </div>
-            	</div>
-            	<div class="row">
-			        <div class="input-field col s6">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+			        <div class="input-field col s12">
+			          <input  id="first_name" type="text" class="validate" />
 			          <label for="first_name">Email</label>
-			        </div>
-            
-			        <div class="input-field col s6">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-			          <label for="first_name">Data de Nascimento</label>
 			        </div>
             	</div>
             	<div class="row">
 			        <div class="input-field col s12">
-			          <button class="btn btn-large blue">Cadastrar</button>
+			          <input  id="first_name" type="text" class="validate" />
+			          <label for="first_name">Senha</label>
+			        </div>
+            	</div>
+          
+            	<div class="row">
+			        <div class="input-field col s12">
+			          <button class="btn btn-large blue right">Logar</button><br />
+			          <small><a href="#modal1">esqueci a senha</a> </small>
 			        </div>
             	</div>
             	</form>
+           <form class="col s7">
+           <h2>Novo usuário</h2>
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
+			          <label for="first_name">Name</label>
+			        </div>
+            	</div>
+            	<div class="row">
+			        <div class="input-field col s12">
+			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
+			          <label for="first_name">Email</label>
+			        </div>
+            	</div>
+            	<div class="row">
+			        <div class="input-field col s12">
+			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
+			          <label for="first_name">Senha</label>
+			        </div>
+            	</div>
+            	<div class="row">
+			        <div class="input-field col s12">
+			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
+			          <label for="first_name">Rep. Senha</label>
+			        </div>
+            	</div>
+            	<div class="row">
+			        <div class="input-field col s12">
+			          <button class="btn btn-large green right">Cadastrar</button>
+			        </div>
+            	</div>
+            	</form>
+           
+           
            </div>
         </div>
-</div>
+       </div>
  
 </div>
 	    
@@ -120,11 +133,12 @@
             <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
-          <input id="first_name" type="text" class="validate">
+          <input id="first_name" type="text" class="validate" />
           <label for="first_name" class="white-text">Digite seu melhor email</label><br />
           <button class="btn  btn-block right">Enviar</button>
         </div>
         </div>
+        </form>
             </li>
           </ul>
         </div>
@@ -138,6 +152,23 @@
     </div>
   </footer>
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal bottom-sheet" style="background: url('resources/imagem_site/nerd3.png');">
+    <div class="modal-content">
+      <h4 class="white-text">Esqueci a senha</h4>
+      <div class="row">
+     
+       <form >
+       <label class="small white-text">Digite sua senha</label><br />
+		   <input type="email" value=""  id="button-1" class="validate white-text" required="required" />
+		   <br />
+		   <button class="btn btn-large btn-block right">Lembrar</button>
+       </form>
+      </div>
+    </div>
+   
+  </div>
+         
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
