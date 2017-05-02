@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<div class="navbar-fixed z-depth-5">
+	<nav>
+		<a href="#!" style="padding-left: 10px" class="brand-logo white-text">Nerdão
+			<small>&lt; sua loja nerd on-line /&gt;</small>
+		</a>
+
+		<h:panelGroup rendered="#{carBean.listCarrinho.size() > 0}">
+			<div class="nav-wrapper right" style="padding-right: 5px">
+				<a href="#modal1"
+					class="btn-floating btn-large teal navbar-fixed pulse"> <i
+					class="large material-icons">shopping_cart</i>
+				</a>
+			</div>
+		</h:panelGroup>
+	</nav>
+
+
+
+</div>
+
+<div class="fixed-action-btn toolbar ">
+
+	<a class="btn-floating btn-large red white-text "> <i
+		class="large material-icons">reorder</i>
+	</a>
+	<ul>
+		<li class="waves-effect waves-light"><a href="login.xhtml"><i
+				class="material-icons">perm_identity</i></a></li>
+		<li class="waves-effect waves-light"><a href="contato.html"><i
+				class="material-icons">email</i></a></li>
+	</ul>
+</div>
+</html>
